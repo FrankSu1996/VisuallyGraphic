@@ -9,3 +9,8 @@ Currently includes:
 When the application loads, click and drag the arrow/bullseye to set the starting/finish nodes. To Place walls that block the traversal of the algorithms, merely click and drag through any nodes on the screen. Then, select an algorithm, sit back, and enjoy the magic!
 
 Known bugs: There is currently a small bug regarding wall placements and start/finish node placements. Sometimes, even when the left-mouse click is released, the onMouseUp() event listener is not firing properly. If this happens, simply click once anywhere. To avoid this, simply perform drag-and-drop operations slowly. Not sure why this is happening :(
+
+## Improvements:
+As this application is currently an active side project, the following are features to be implemented for the future:
+* Improved ui
+* Implementation of weighted walls that change behaviour of weighted algorithms (i.e. djikstra's)
