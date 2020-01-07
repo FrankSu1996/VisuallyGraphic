@@ -127,6 +127,8 @@ export default class PathfindingVisualizer extends Component {
     this.animateAlgorithm (visitedNodesInOrder, nodesInShortestPathOrder);
   }
 
+  resetGrid () {}
+
   render () {
     const {grid, mouseIsPressed} = this.state;
 
@@ -141,6 +143,7 @@ export default class PathfindingVisualizer extends Component {
         <button onClick={() => this.visualizeAlgorithm ('breadthFirstSearch')}>
           Visualize BreadthFirstSearch Algorithm
         </button>
+        <button onClick={() => this.resetGrid ()}>Reset Grid</button>
         <div className="grid">
           {grid.map ((row, rowIdx) => {
             return (
