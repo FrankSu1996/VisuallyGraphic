@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/VisuallyGraphic/static/css/main.fecda765.chunk.css",
-    "main.js": "/VisuallyGraphic/static/js/main.9b427ccb.chunk.js",
-    "main.js.map": "/VisuallyGraphic/static/js/main.9b427ccb.chunk.js.map",
+    "main.js": "/VisuallyGraphic/static/js/main.2a07ef33.chunk.js",
+    "main.js.map": "/VisuallyGraphic/static/js/main.2a07ef33.chunk.js.map",
     "runtime-main.js": "/VisuallyGraphic/static/js/runtime-main.be73a1e5.js",
     "runtime-main.js.map": "/VisuallyGraphic/static/js/runtime-main.be73a1e5.js.map",
     "static/js/2.7c5aa08c.chunk.js": "/VisuallyGraphic/static/js/2.7c5aa08c.chunk.js",
     "static/js/2.7c5aa08c.chunk.js.map": "/VisuallyGraphic/static/js/2.7c5aa08c.chunk.js.map",
     "index.html": "/VisuallyGraphic/index.html",
-    "precache-manifest.5c05954cc29c1b5d1d6f0aab0e456bac.js": "/VisuallyGraphic/precache-manifest.5c05954cc29c1b5d1d6f0aab0e456bac.js",
+    "precache-manifest.c1dbc63996ba3c4ee5a8a89dd96c2fa4.js": "/VisuallyGraphic/precache-manifest.c1dbc63996ba3c4ee5a8a89dd96c2fa4.js",
     "service-worker.js": "/VisuallyGraphic/service-worker.js",
     "static/css/main.fecda765.chunk.css.map": "/VisuallyGraphic/static/css/main.fecda765.chunk.css.map",
     "static/js/2.7c5aa08c.chunk.js.LICENSE": "/VisuallyGraphic/static/js/2.7c5aa08c.chunk.js.LICENSE",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.be73a1e5.js",
     "static/js/2.7c5aa08c.chunk.js",
     "static/css/main.fecda765.chunk.css",
-    "static/js/main.9b427ccb.chunk.js"
+    "static/js/main.2a07ef33.chunk.js"
   ]
 }
