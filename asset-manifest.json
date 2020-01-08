@@ -1,23 +1,26 @@
 {
   "files": {
-    "main.css": "/VisuallyGraphic/static/css/main.0789c63b.chunk.css",
-    "main.js": "/VisuallyGraphic/static/js/main.d57c1ee5.chunk.js",
-    "main.js.map": "/VisuallyGraphic/static/js/main.d57c1ee5.chunk.js.map",
+    "main.css": "/VisuallyGraphic/static/css/main.a4796725.chunk.css",
+    "main.js": "/VisuallyGraphic/static/js/main.dfe339c0.chunk.js",
+    "main.js.map": "/VisuallyGraphic/static/js/main.dfe339c0.chunk.js.map",
     "runtime-main.js": "/VisuallyGraphic/static/js/runtime-main.be73a1e5.js",
     "runtime-main.js.map": "/VisuallyGraphic/static/js/runtime-main.be73a1e5.js.map",
-    "static/js/2.7c5aa08c.chunk.js": "/VisuallyGraphic/static/js/2.7c5aa08c.chunk.js",
-    "static/js/2.7c5aa08c.chunk.js.map": "/VisuallyGraphic/static/js/2.7c5aa08c.chunk.js.map",
+    "static/css/2.17e5ed98.chunk.css": "/VisuallyGraphic/static/css/2.17e5ed98.chunk.css",
+    "static/js/2.f033bdeb.chunk.js": "/VisuallyGraphic/static/js/2.f033bdeb.chunk.js",
+    "static/js/2.f033bdeb.chunk.js.map": "/VisuallyGraphic/static/js/2.f033bdeb.chunk.js.map",
     "index.html": "/VisuallyGraphic/index.html",
-    "precache-manifest.6c16511c3f95ddae0daffb06d908e585.js": "/VisuallyGraphic/precache-manifest.6c16511c3f95ddae0daffb06d908e585.js",
+    "precache-manifest.009a711ee5377dd35652ff582d1c581b.js": "/VisuallyGraphic/precache-manifest.009a711ee5377dd35652ff582d1c581b.js",
     "service-worker.js": "/VisuallyGraphic/service-worker.js",
-    "static/css/main.0789c63b.chunk.css.map": "/VisuallyGraphic/static/css/main.0789c63b.chunk.css.map",
-    "static/js/2.7c5aa08c.chunk.js.LICENSE": "/VisuallyGraphic/static/js/2.7c5aa08c.chunk.js.LICENSE",
-    "static/media/Node.css": "/VisuallyGraphic/static/media/triangletwo-right.49fad9e6.svg"
+    "static/css/2.17e5ed98.chunk.css.map": "/VisuallyGraphic/static/css/2.17e5ed98.chunk.css.map",
+    "static/css/main.a4796725.chunk.css.map": "/VisuallyGraphic/static/css/main.a4796725.chunk.css.map",
+    "static/js/2.f033bdeb.chunk.js.LICENSE": "/VisuallyGraphic/static/js/2.f033bdeb.chunk.js.LICENSE",
+    "static/media/Node.css": "/VisuallyGraphic/static/media/triangletwo-up.e653f10b.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.be73a1e5.js",
-    "static/js/2.7c5aa08c.chunk.js",
-    "static/css/main.0789c63b.chunk.css",
-    "static/js/main.d57c1ee5.chunk.js"
+    "static/css/2.17e5ed98.chunk.css",
+    "static/js/2.f033bdeb.chunk.js",
+    "static/css/main.a4796725.chunk.css",
+    "static/js/main.dfe339c0.chunk.js"
   ]
 }
