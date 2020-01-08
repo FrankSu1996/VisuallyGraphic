@@ -3,7 +3,30 @@ import {Dropdown, Button, Container, Row, Col} from 'react-bootstrap';
 import './Menu.css';
 import {algorithmSpeed} from '../PathfindingVisualizer/PathfindingVisualizer';
 
+//descriptions for algorithm
+const AlgorithmDescription = {
+  djikstra:
+    "Djikstra's algorithm is a WEIGHTED algorithm and gauruntees the shortest path!",
+  depthFirstSearch:
+    'Depth First Search is an UNWEIGHTED algorithm and does not gauruntee the shortest path',
+  breadthFirstSearch:
+    'Breadth First Search is an UNWEIGHTED algorithm and gauruntees the shortest path',
+};
+
 const Menu = props => {
+  let algorithmSelected = props.algorithmSelected;
+  let algorithmDescription = null;
+
+  if (algorithmSelected === 'djikstra') {
+    algorithmDescription = AlgorithmDescription.djikstra;
+  } else if (algorithmSelected === 'depthFirstSearch') {
+    algorithmDescription = AlgorithmDescription.depthFirstSearch;
+  } else if (algorithmSelected === 'breadthFirstSearch') {
+    algorithmDescription = AlgorithmDescription.breadthFirstSearch;
+  } else if (algorithmSelected === null) {
+    algorithmDescription = 'Please choose an algorithm to visualize!';
+  }
+
   return (
     <div className="menu">
       <img
@@ -52,7 +75,6 @@ const Menu = props => {
               onClick={() => props.visualizeAlgorithm(props.algorithmSelected)}
               disabled={props.algorithmInProgress}
               variant="success"
-              size="lg"
             >
               Visualize {props.algorithmSelected}
             </Button>
@@ -102,6 +124,9 @@ const Menu = props => {
             </Dropdown>
           </Col>
         </Row>
+        <div className="algorithmDescription">
+          <strong>{algorithmDescription}</strong>
+        </div>
       </Container>
     </div>
   );
