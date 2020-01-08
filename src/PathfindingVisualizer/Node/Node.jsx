@@ -10,7 +10,6 @@ export default class Node extends Component {
       isStart,
       isWall,
       is2xWall,
-      is3xWall,
       onMouseDown,
       onMouseEnter,
       onMouseUp,
@@ -24,8 +23,6 @@ export default class Node extends Component {
       ? 'node-wall'
       : is2xWall
       ? 'node-2x-wall'
-      : is3xWall
-      ? 'node-3x-wall'
       : '';
 
     return (

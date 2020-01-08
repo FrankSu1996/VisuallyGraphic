@@ -64,9 +64,15 @@ const Menu = props => {
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item>Normal</Dropdown.Item>
-                <Dropdown.Item>2x Weighted</Dropdown.Item>
-                <Dropdown.Item>3x Weighted</Dropdown.Item>
+                <Dropdown.Item onClick={() => props.setWall('normal')}>
+                  Normal
+                </Dropdown.Item>
+                <Dropdown.Item
+                  onClick={() => props.setWall('2x')}
+                  disabled={!props.algorithmWeighted}
+                >
+                  Weighted
+                </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </Col>
