@@ -6,7 +6,13 @@ import PathfindingVisualizer
 function App () {
   return (
     <div className="App">
-      <h1>Hello</h1>
+      <img
+        src="https://images.cooltext.com/5368723.png"
+        width="524"
+        height="90"
+        alt="Graph Visualz"
+        className="title"
+      />
       <PathfindingVisualizer />
     </div>
   );

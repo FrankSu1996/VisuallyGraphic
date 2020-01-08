@@ -5,6 +5,7 @@ import {unweightedAlgorithm} from '../algorithms/depthFirstSearch';
 
 import './PathfindingVisualizer.css';
 
+//constants to define start and finish node coordinates
 let START_NODE_ROW = 10;
 let START_NODE_COL = 15;
 let FINISH_NODE_ROW = 10;
@@ -18,6 +19,8 @@ export default class PathfindingVisualizer extends Component {
       mouseIsPressed: false,
       startNodeSelected: false,
       finishNodeSelected: false,
+      algorithmInProgress: false,
+      algorithmSelected: null,
     };
   }
 
@@ -67,6 +70,7 @@ export default class PathfindingVisualizer extends Component {
   }
 
   animateAlgorithm (visitedNodesInOrder, nodesInShortestPathOrder) {
+    this.setState ({algorithmInProgress: true});
     for (let i = 0; i <= visitedNodesInOrder.length; i++) {
       if (i === visitedNodesInOrder.length) {
         setTimeout (() => {
@@ -92,6 +96,7 @@ export default class PathfindingVisualizer extends Component {
           'node node-shortest-path';
       }, 50 * i);
     }
+    this.setState ({algorithmInProgress: false});
   }
 
   visualizeAlgorithm (algorithm) {
@@ -127,7 +132,24 @@ export default class PathfindingVisualizer extends Component {
     this.animateAlgorithm (visitedNodesInOrder, nodesInShortestPathOrder);
   }
 
-  resetGrid () {}
+  resetGrid () {
+    console.log ('fdsa');
+    const newGrid = getInitialGrid ();
+    for (let row = 0; row < 20; row++) {
+      for (let col = 0; col < 50; col++) {
+        if (row === START_NODE_ROW && col === START_NODE_COL) {
+          document.getElementById (`node-${row}-${col}`).className =
+            'node node-start';
+        } else if (row === FINISH_NODE_ROW && col === FINISH_NODE_COL) {
+          document.getElementById (`node-${row}-${col}`).className =
+            'node node-finish';
+        } else {
+          document.getElementById (`node-${row}-${col}`).className = 'node';
+        }
+      }
+    }
+    this.setState ({grid: newGrid});
+  }
 
   render () {
     const {grid, mouseIsPressed} = this.state;
@@ -143,7 +165,12 @@ export default class PathfindingVisualizer extends Component {
         <button onClick={() => this.visualizeAlgorithm ('breadthFirstSearch')}>
           Visualize BreadthFirstSearch Algorithm
         </button>
-        <button onClick={() => this.resetGrid ()}>Reset Grid</button>
+        <button
+          onClick={() => this.resetGrid ()}
+          disabled={this.state.algorithmInProgress}
+        >
+          Reset Grid
+        </button>
         <div className="grid">
           {grid.map ((row, rowIdx) => {
             return (
