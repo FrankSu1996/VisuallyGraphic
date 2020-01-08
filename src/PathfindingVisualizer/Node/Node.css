@@ -24,7 +24,7 @@
 }
 
 .node-start {
-  background-image: url('../../styling//triangletwo-right.svg');
+  background-image: url('../../styling/triangletwo-right.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -73,6 +73,10 @@
 
 .node-wall {
   background-color: rgb(0, 0, 0);
+}
+
+.node-2x-wall {
+  background-image: url('../../styling/weight.svg');
 }
 
 .node-shortest-path {

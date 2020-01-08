@@ -220,7 +220,15 @@ export default class PathfindingVisualizer extends Component {
             return (
               <div key={rowIdx}>
                 {row.map((node, nodeIdx) => {
-                  const {row, col, isFinish, isStart, isWall} = node;
+                  const {
+                    row,
+                    col,
+                    isFinish,
+                    isStart,
+                    isWall,
+                    is2xWall,
+                    is3xWall,
+                  } = node;
                   return (
                     <Node
                       key={nodeIdx}
@@ -228,6 +236,8 @@ export default class PathfindingVisualizer extends Component {
                       isFinish={isFinish}
                       isStart={isStart}
                       isWall={isWall}
+                      is2xWall={is2xWall}
+                      is3xWall={is3xWall}
                       mouseIsPressed={mouseIsPressed}
                       onMouseDown={(row, col) => this.handleMouseDown(row, col)}
                       onMouseEnter={(row, col) =>
@@ -268,6 +278,8 @@ const createNode = (col, row) => {
     distance: Infinity,
     isVisited: false,
     isWall: false,
+    is2xWall: false,
+    is3xWall: false,
     previousNode: null,
     animationDirection: null,
   };
