@@ -11,8 +11,15 @@ export function unweightedAlgorithm(grid, startNode, endNode, algorithm) {
   startNode.distance = 0;
   let node = null;
   while (!!stack.length) {
-    const sortedStack = sortNodesByDistance(stack);
-    if (sortedStack.shift().distance === Infinity) return visitedNodesInOrder;
+    const sortedStack = [...stack];
+    sortNodesByDistance(sortedStack);
+    const closestNode = sortedStack.shift();
+
+    //if closest node in sorted array is infinity, we know that the start node is trapped
+    //by walls
+    if (closestNode.distance === Infinity) {
+      return visitedNodesInOrder;
+    }
 
     if (algorithm === 'depthFirstSearch') {
       node = stack.pop();
@@ -20,11 +27,11 @@ export function unweightedAlgorithm(grid, startNode, endNode, algorithm) {
       node = stack.shift();
     }
 
-    visitedNodesInOrder.push(node);
-
     if (node.isWall) {
       continue;
     }
+
+    visitedNodesInOrder.push(node);
 
     //end node is reached: return all nodes visited in order
     if (node === endNode) {
@@ -36,7 +43,9 @@ export function unweightedAlgorithm(grid, startNode, endNode, algorithm) {
 
     //push all unvisited neighbors onto stack, and set link to previous node
     for (const neighbor of unvisitedNeighbors) {
-      if (!neighbor.isVisited && !neighbor.isWall) {
+      if (neighbor.isWall) {
+        stack.push(neighbor);
+      } else if (!neighbor.isVisited && !neighbor.isWall) {
         neighbor.previousNode = node;
         neighbor.distance = node.distance + 1;
         neighbor.isVisited = true;
