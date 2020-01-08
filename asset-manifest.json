@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/VisuallyGraphic/static/css/main.a4796725.chunk.css",
-    "main.js": "/VisuallyGraphic/static/js/main.89a2b24c.chunk.js",
-    "main.js.map": "/VisuallyGraphic/static/js/main.89a2b24c.chunk.js.map",
+    "main.css": "/VisuallyGraphic/static/css/main.75509038.chunk.css",
+    "main.js": "/VisuallyGraphic/static/js/main.9a262dd5.chunk.js",
+    "main.js.map": "/VisuallyGraphic/static/js/main.9a262dd5.chunk.js.map",
     "runtime-main.js": "/VisuallyGraphic/static/js/runtime-main.be73a1e5.js",
     "runtime-main.js.map": "/VisuallyGraphic/static/js/runtime-main.be73a1e5.js.map",
     "static/css/2.17e5ed98.chunk.css": "/VisuallyGraphic/static/css/2.17e5ed98.chunk.css",
-    "static/js/2.f033bdeb.chunk.js": "/VisuallyGraphic/static/js/2.f033bdeb.chunk.js",
-    "static/js/2.f033bdeb.chunk.js.map": "/VisuallyGraphic/static/js/2.f033bdeb.chunk.js.map",
+    "static/js/2.2682a285.chunk.js": "/VisuallyGraphic/static/js/2.2682a285.chunk.js",
+    "static/js/2.2682a285.chunk.js.map": "/VisuallyGraphic/static/js/2.2682a285.chunk.js.map",
     "index.html": "/VisuallyGraphic/index.html",
-    "precache-manifest.7d3fbca70fcb34ec514e075ee66689fd.js": "/VisuallyGraphic/precache-manifest.7d3fbca70fcb34ec514e075ee66689fd.js",
+    "precache-manifest.407b5ee02b17a8068ec029e17474e59d.js": "/VisuallyGraphic/precache-manifest.407b5ee02b17a8068ec029e17474e59d.js",
     "service-worker.js": "/VisuallyGraphic/service-worker.js",
     "static/css/2.17e5ed98.chunk.css.map": "/VisuallyGraphic/static/css/2.17e5ed98.chunk.css.map",
-    "static/css/main.a4796725.chunk.css.map": "/VisuallyGraphic/static/css/main.a4796725.chunk.css.map",
-    "static/js/2.f033bdeb.chunk.js.LICENSE": "/VisuallyGraphic/static/js/2.f033bdeb.chunk.js.LICENSE",
-    "static/media/Node.css": "/VisuallyGraphic/static/media/triangletwo-up.e653f10b.svg"
+    "static/css/main.75509038.chunk.css.map": "/VisuallyGraphic/static/css/main.75509038.chunk.css.map",
+    "static/js/2.2682a285.chunk.js.LICENSE": "/VisuallyGraphic/static/js/2.2682a285.chunk.js.LICENSE",
+    "static/media/Node.css": "/VisuallyGraphic/static/media/weight.8b263d82.svg"
   },
   "entrypoints": [
     "static/js/runtime-main.be73a1e5.js",
     "static/css/2.17e5ed98.chunk.css",
-    "static/js/2.f033bdeb.chunk.js",
-    "static/css/main.a4796725.chunk.css",
-    "static/js/main.89a2b24c.chunk.js"
+    "static/js/2.2682a285.chunk.js",
+    "static/css/main.75509038.chunk.css",
+    "static/js/main.9a262dd5.chunk.js"
   ]
 }
