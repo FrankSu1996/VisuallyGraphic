@@ -12,6 +12,13 @@ let START_NODE_COL = 15;
 let FINISH_NODE_ROW = 10;
 let FINISH_NODE_COL = 30;
 
+//enumeration to define algorithm animation (in ms)
+export const algorithmSpeed = {
+  SLOW: 200,
+  MEDIUM: 75,
+  FAST: 20,
+};
+
 export default class PathfindingVisualizer extends Component {
   constructor() {
     super();
@@ -22,6 +29,7 @@ export default class PathfindingVisualizer extends Component {
       finishNodeSelected: false,
       algorithmInProgress: false,
       algorithmSelected: null,
+      algorithmSpeed: algorithmSpeed.FAST,
     };
   }
 
@@ -89,7 +97,7 @@ export default class PathfindingVisualizer extends Component {
           document.getElementById(`node-${node.row}-${node.col}`).className =
             'node node-visited node-start';
         }
-      }, 20 * i);
+      }, this.state.algorithmSpeed * i);
     }
   };
 
@@ -133,7 +141,7 @@ export default class PathfindingVisualizer extends Component {
     this.setState({algorithmInProgress: false});
   };
 
-  visualizeAlgorithm = algorithm => {
+  visualizeAlgorithmHandler = algorithm => {
     const {grid} = this.state;
     const startNode = grid[START_NODE_ROW][START_NODE_COL];
     const finishNode = grid[FINISH_NODE_ROW][FINISH_NODE_COL];
@@ -166,7 +174,7 @@ export default class PathfindingVisualizer extends Component {
     this.animateAlgorithm(visitedNodesInOrder, nodesInShortestPathOrder);
   };
 
-  resetGrid = () => {
+  resetGridHandler = () => {
     console.log('fdsa');
     const newGrid = getInitialGrid();
     for (let row = 0; row < 20; row++) {
@@ -185,8 +193,12 @@ export default class PathfindingVisualizer extends Component {
     this.setState({grid: newGrid});
   };
 
-  setAlgorithm = algorithm => {
+  setAlgorithmHandler = algorithm => {
     this.setState({algorithmSelected: algorithm});
+  };
+
+  setSpeedHandler = speed => {
+    this.setState({algorithmSpeed: speed});
   };
 
   render() {
@@ -195,11 +207,13 @@ export default class PathfindingVisualizer extends Component {
     return (
       <React.Fragment>
         <Menu
-          setAlgorithm={this.setAlgorithm}
-          visualizeAlgorithm={this.visualizeAlgorithm}
-          reset={this.resetGrid}
+          setAlgorithm={this.setAlgorithmHandler}
+          visualizeAlgorithm={this.visualizeAlgorithmHandler}
+          resetGrid={this.resetGridHandler}
           algorithmInProgress={this.state.algorithmInProgress}
           algorithmSelected={this.state.algorithmSelected}
+          setSpeed={this.setSpeedHandler}
+          algorithmSpeed={this.state.algorithmSpeed}
         ></Menu>
         <div className="grid">
           {grid.map((row, rowIdx) => {
