@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import Node from './Node/Node';
 import {dijkstra, getNodesInShortestPathOrder} from '../algorithms/dijkstra';
 import {unweightedAlgorithm} from '../algorithms/depthFirstSearch';
+import Menu from '../Menu/Menu';
 
 import './PathfindingVisualizer.css';
 
@@ -24,13 +25,13 @@ export default class PathfindingVisualizer extends Component {
     };
   }
 
-  componentDidMount() {
+  componentDidMount = () => {
     const grid = getInitialGrid();
     this.setState({grid});
-  }
+  };
 
   //handles either placing walls, or setting start and finish nodes
-  handleMouseDown(row, col) {
+  handleMouseDown = (row, col) => {
     let newGrid = [];
     if (this.state.grid[row][col].isStart) {
       this.setState({startNodeSelected: true});
@@ -42,9 +43,9 @@ export default class PathfindingVisualizer extends Component {
       newGrid = getNewGridWithWallToggled(this.state.grid, row, col);
     }
     this.setState({grid: newGrid, mouseIsPressed: true});
-  }
+  };
 
-  handleMouseEnter(row, col) {
+  handleMouseEnter = (row, col) => {
     if (!this.state.mouseIsPressed) return;
 
     let newGrid = [];
@@ -58,18 +59,18 @@ export default class PathfindingVisualizer extends Component {
       newGrid = getNewGridWithWallToggled(this.state.grid, row, col);
     }
     this.setState({grid: newGrid});
-  }
+  };
 
-  handleMouseUp() {
+  handleMouseUp = () => {
     if (this.state.startNodeSelected) {
       this.setState({startNodeSelected: false});
     } else if (this.state.finishNodeSelected) {
       this.setState({finishNodeSelected: false});
     }
     this.setState({mouseIsPressed: false});
-  }
+  };
 
-  animateAlgorithm(visitedNodesInOrder, nodesInShortestPathOrder) {
+  animateAlgorithm = (visitedNodesInOrder, nodesInShortestPathOrder) => {
     this.setState({algorithmInProgress: true});
     for (let i = 0; i <= visitedNodesInOrder.length; i++) {
       if (i === visitedNodesInOrder.length) {
@@ -90,9 +91,9 @@ export default class PathfindingVisualizer extends Component {
         }
       }, 20 * i);
     }
-  }
+  };
 
-  animateShortestPath(nodesInShortestPathOrder) {
+  animateShortestPath = nodesInShortestPathOrder => {
     for (let i = 0; i < nodesInShortestPathOrder.length; i++) {
       setTimeout(() => {
         const node = nodesInShortestPathOrder[i];
@@ -130,9 +131,9 @@ export default class PathfindingVisualizer extends Component {
       }, 50 * i);
     }
     this.setState({algorithmInProgress: false});
-  }
+  };
 
-  visualizeAlgorithm(algorithm) {
+  visualizeAlgorithm = algorithm => {
     const {grid} = this.state;
     const startNode = grid[START_NODE_ROW][START_NODE_COL];
     const finishNode = grid[FINISH_NODE_ROW][FINISH_NODE_COL];
@@ -163,9 +164,9 @@ export default class PathfindingVisualizer extends Component {
     }
     const nodesInShortestPathOrder = getNodesInShortestPathOrder(finishNode);
     this.animateAlgorithm(visitedNodesInOrder, nodesInShortestPathOrder);
-  }
+  };
 
-  resetGrid() {
+  resetGrid = () => {
     console.log('fdsa');
     const newGrid = getInitialGrid();
     for (let row = 0; row < 20; row++) {
@@ -182,28 +183,24 @@ export default class PathfindingVisualizer extends Component {
       }
     }
     this.setState({grid: newGrid});
-  }
+  };
+
+  setAlgorithm = algorithm => {
+    this.setState({algorithmSelected: algorithm});
+  };
 
   render() {
     const {grid, mouseIsPressed} = this.state;
 
     return (
       <React.Fragment>
-        <button onClick={() => this.visualizeAlgorithm('djikstra')}>
-          Visualize Dijkstra's Algorithm
-        </button>
-        <button onClick={() => this.visualizeAlgorithm('depthFirstSearch')}>
-          Visualize DepthFirstSearch Algorithm
-        </button>
-        <button onClick={() => this.visualizeAlgorithm('breadthFirstSearch')}>
-          Visualize BreadthFirstSearch Algorithm
-        </button>
-        <button
-          onClick={() => this.resetGrid()}
-          disabled={this.state.algorithmInProgress}
-        >
-          Reset Grid
-        </button>
+        <Menu
+          setAlgorithm={this.setAlgorithm}
+          visualizeAlgorithm={this.visualizeAlgorithm}
+          reset={this.resetGrid}
+          algorithmInProgress={this.state.algorithmInProgress}
+          algorithmSelected={this.state.algorithmSelected}
+        ></Menu>
         <div className="grid">
           {grid.map((row, rowIdx) => {
             return (
