@@ -86,6 +86,26 @@
   animation-play-state: running;
 }
 
+.right {
+  background-image: url('../../styling//triangletwo-right.svg');
+  background-size: contain;
+}
+
+.left {
+  background-image: url('../../styling//triangletwo-left.svg');
+  background-size: contain;
+}
+
+.down {
+  background-image: url('../../styling//triangletwo-down.svg');
+  background-size: contain;
+}
+
+.up {
+  background-image: url('../../styling//triangletwo-up.svg');
+  background-size: contain;
+}
+
 @keyframes shortestPath {
   0% {
     transform: scale(0.6);
