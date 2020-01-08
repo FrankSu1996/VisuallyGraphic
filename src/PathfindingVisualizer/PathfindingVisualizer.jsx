@@ -163,6 +163,8 @@ export default class PathfindingVisualizer extends Component {
 
   visualizeAlgorithmHandler = algorithm => {
     const {grid} = this.state;
+    console.log('columns: ', grid[0].length);
+    console.log('rows: ', grid.length);
     const startNode = grid[START_NODE_ROW][START_NODE_COL];
     const finishNode = grid[FINISH_NODE_ROW][FINISH_NODE_COL];
     let visitedNodesInOrder = [];

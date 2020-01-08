@@ -41,7 +41,7 @@ const Menu = props => {
           <Col>
             <Dropdown>
               <Dropdown.Toggle variant="primary" id="dropdown-basic">
-                Choose Algorithm
+                Choose Graph Algorithm
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
@@ -58,6 +58,19 @@ const Menu = props => {
                 >
                   Breadth First Search
                 </Dropdown.Item>
+              </Dropdown.Menu>
+            </Dropdown>
+          </Col>
+          <Col>
+            <Dropdown>
+              <Dropdown.Toggle variant="primary" id="dropdown-basic">
+                Generate Maze
+              </Dropdown.Toggle>
+
+              <Dropdown.Menu>
+                <Dropdown.Item>Recursive Division Algorithm</Dropdown.Item>
+                <Dropdown.Item>###########</Dropdown.Item>
+                <Dropdown.Item>###########</Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown>
           </Col>
