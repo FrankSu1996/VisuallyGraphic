@@ -84,7 +84,7 @@ export default class PathfindingVisualizer extends Component {
       if (i === visitedNodesInOrder.length) {
         setTimeout(() => {
           this.animateShortestPath(nodesInShortestPathOrder);
-        }, 20 * i);
+        }, this.state.algorithmSpeed * i);
         return;
       }
       setTimeout(() => {
