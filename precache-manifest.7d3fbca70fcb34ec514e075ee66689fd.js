@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "927272c1dcf53f4a610e03c4c145d74b",
+    "revision": "57aecc89f5a24f37acef2038eb1c6231",
     "url": "/VisuallyGraphic/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/VisuallyGraphic/static/css/2.17e5ed98.chunk.css"
   },
   {
-    "revision": "3ce316769db1d0011f1e",
+    "revision": "6084ac3b6b79628d2724",
     "url": "/VisuallyGraphic/static/css/main.a4796725.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/VisuallyGraphic/static/js/2.f033bdeb.chunk.js.LICENSE"
   },
   {
-    "revision": "3ce316769db1d0011f1e",
-    "url": "/VisuallyGraphic/static/js/main.dfe339c0.chunk.js"
+    "revision": "6084ac3b6b79628d2724",
+    "url": "/VisuallyGraphic/static/js/main.89a2b24c.chunk.js"
   },
   {
     "revision": "5fa295e7db4f22baf872",
