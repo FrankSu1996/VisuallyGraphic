@@ -6,7 +6,7 @@ Currently includes:
 * [Breadth First Search](https://en.wikipedia.org/wiki/Breadth-first_search) - a non-weighted graph traversal algorithm that gauruntees the shortest path
 
 ## Tutorial
-When the application loads, click and drag the arrow/bullseye to set the starting/finish nodes. To Place walls that block the traversal of the algorithms, first select the type of wall (normal, 10x weighted, 20x weighted), then click and drag through any nodes on the screen. Finally, select an algorithm, choose the speed at which the algorithm will run at, and click the visualize button. Sit back, and enjoy the magic!
+When the application loads, click and drag the arrow/bullseye to set the starting/finish nodes. To Place walls that block the traversal of the algorithms, first select the type of wall (normal, weighted), then click and drag through any nodes on the screen. Finally, select an algorithm, choose the speed at which the algorithm will run at, and click the visualize button. Sit back, and enjoy the magic!
 
 **Note**: In order to select weighted walls, you must select a weighted algorithm (Djikstra). 
 
@@ -14,5 +14,4 @@ Known bugs: There is currently a small bug regarding wall placements and start/f
 
 ## Improvements:
 As this application is currently an active side project, the following are features to be implemented for the future:
-* Improved ui
-* Implementation of weighted walls that change behaviour of weighted algorithms (i.e. djikstra's)
+* Maze Generating algorithms: Currently working on Recursive Division Algorithm
