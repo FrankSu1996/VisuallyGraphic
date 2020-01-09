@@ -42,7 +42,11 @@ const Menu = props => {
           <Row>
             <Col>
               <Dropdown>
-                <Dropdown.Toggle variant="primary" id="dropdown-basic">
+                <Dropdown.Toggle
+                  variant="primary"
+                  id="dropdown-basic"
+                  disabled={props.algorithmInProgress}
+                >
                   Choose Graph Algorithm
                 </Dropdown.Toggle>
 
@@ -65,7 +69,11 @@ const Menu = props => {
             </Col>
             <Col>
               <Dropdown>
-                <Dropdown.Toggle variant="primary" id="dropdown-basic">
+                <Dropdown.Toggle
+                  variant="primary"
+                  id="dropdown-basic"
+                  disabled={props.algorithmInProgress}
+                >
                   Generate Maze
                 </Dropdown.Toggle>
 
@@ -100,7 +108,11 @@ const Menu = props => {
             </Col>
             <Col>
               <Dropdown>
-                <Dropdown.Toggle variant="primary" id="dropdown-basic">
+                <Dropdown.Toggle
+                  variant="primary"
+                  id="dropdown-basic"
+                  disabled={props.algorithmInProgress}
+                >
                   Select Wall
                 </Dropdown.Toggle>
 
@@ -119,7 +131,11 @@ const Menu = props => {
             </Col>
             <Col>
               <Dropdown>
-                <Dropdown.Toggle variant="primary" id="dropdown-basic">
+                <Dropdown.Toggle
+                  variant="primary"
+                  id="dropdown-basic"
+                  disabled={props.algorithmInProgress}
+                >
                   Select Speed
                 </Dropdown.Toggle>
 
