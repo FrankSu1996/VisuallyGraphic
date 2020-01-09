@@ -227,6 +227,7 @@ export default class PathfindingVisualizer extends Component {
       this.setState({
         algorithmSelected: algorithm,
         isAlgorithmSelectedWeighted: false,
+        wallTypeSelected: 'normal',
       });
     }
   };
