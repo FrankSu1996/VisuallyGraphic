@@ -4,6 +4,7 @@ import {dijkstra, getNodesInShortestPathOrder} from '../algorithms/dijkstra';
 import {unweightedAlgorithm} from '../algorithms/depthFirstSearch';
 import Menu from '../Menu/Menu';
 import {recursiveDivision} from '../maze/maze';
+import {Container, Row, Col} from 'react-bootstrap';
 
 import './PathfindingVisualizer.css';
 
