@@ -3,6 +3,7 @@ import Node from './Node/Node';
 import {dijkstra, getNodesInShortestPathOrder} from '../algorithms/dijkstra';
 import {unweightedAlgorithm} from '../algorithms/depthFirstSearch';
 import Menu from '../Menu/Menu';
+import {recursiveDivision} from '../maze/maze';
 
 import './PathfindingVisualizer.css';
 
@@ -238,6 +239,20 @@ export default class PathfindingVisualizer extends Component {
     this.setState({wallTypeSelected: wall});
   };
 
+  generateMazeHandler = () => {
+    const generatedWallsInOrder = recursiveDivision(this.state.grid);
+    const newGrid = [...this.state.grid];
+    for (let i = 0; i < generatedWallsInOrder.length; i++) {
+      setTimeout(() => {
+        const node = generatedWallsInOrder[i];
+        newGrid[node.row][node.col].isWall = true;
+        document.getElementById(`node-${node.row}-${node.col}`).className =
+          'node node-wall';
+      }, 15 * i);
+    }
+    this.setState({grid: newGrid});
+  };
+
   render() {
     const {grid, mouseIsPressed} = this.state;
 
@@ -253,6 +268,7 @@ export default class PathfindingVisualizer extends Component {
           algorithmSpeed={this.state.algorithmSpeed}
           setWall={this.setWallHandler}
           algorithmWeighted={this.state.isAlgorithmSelectedWeighted}
+          generateMaze={this.generateMazeHandler}
         ></Menu>
         <div className="grid">
           {grid.map((row, rowIdx) => {

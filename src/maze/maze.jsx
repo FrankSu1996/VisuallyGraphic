@@ -1,10 +1,23 @@
 export function recursiveDivision(grid) {
+  const columns = grid[0].length;
+  const rows = grid.length;
   let wallsGeneratedInOrder = [];
   generateOuterWalls(grid, wallsGeneratedInOrder);
+  divide(
+    grid,
+    0,
+    0,
+    columns,
+    rows,
+    chooseOrientation(columns, rows),
+    wallsGeneratedInOrder
+  );
   return wallsGeneratedInOrder;
 }
 
-generateOuterWalls(grid, stack) = () => {
+function divide(grid, x, y, columns, rows, orientation, stack) {}
+
+function generateOuterWalls(grid, stack) {
   const columns = grid[0].length;
   const rows = grid.length;
 
@@ -19,4 +32,10 @@ generateOuterWalls(grid, stack) = () => {
     stack.push(grid[i][0]);
     stack.push(grid[i][columns - 1]);
   }
-};
+}
+
+function chooseOrientation(columns, rows) {
+  if (columns < rows) return 'horizontal';
+  else if (rows < columns) return 'vertical';
+  else return Math.floor(Math.random() + 1) === 0 ? 'horizontal' : 'vertical';
+}

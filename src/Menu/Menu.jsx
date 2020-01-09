@@ -68,7 +68,9 @@ const Menu = props => {
               </Dropdown.Toggle>
 
               <Dropdown.Menu>
-                <Dropdown.Item>Recursive Division Algorithm</Dropdown.Item>
+                <Dropdown.Item onClick={() => props.generateMaze()}>
+                  Recursive Division Algorithm
+                </Dropdown.Item>
                 <Dropdown.Item>###########</Dropdown.Item>
                 <Dropdown.Item>###########</Dropdown.Item>
               </Dropdown.Menu>
