@@ -15,6 +15,7 @@ export default class Node extends Component {
       onMouseUp,
       row,
       isVisited,
+      isLegend,
     } = this.props;
     const extraClassName = isFinish
       ? 'node-finish'
@@ -32,9 +33,9 @@ export default class Node extends Component {
       <div
         id={`node-${row}-${col}`}
         className={`node ${extraClassName}`}
-        onMouseDown={() => onMouseDown(row, col)}
-        onMouseEnter={() => onMouseEnter(row, col)}
-        onMouseUp={() => onMouseUp()}
+        onMouseDown={this.props.isLegend ? () => onMouseDown(row, col) : null}
+        onMouseEnter={this.props.isLegend ? () => onMouseEnter(row, col) : null}
+        onMouseUp={this.props.isLegend ? () => onMouseUp() : null}
       ></div>
     );
   }

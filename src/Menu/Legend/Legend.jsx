@@ -1,5 +1,5 @@
 import React from 'react';
-import {Dropdown, Button, Container, Row, Col} from 'react-bootstrap';
+import {Container, Row, Col} from 'react-bootstrap';
 import '../../PathfindingVisualizer/Node/Node.css';
 import Node from '../../PathfindingVisualizer/Node/Node';
 
@@ -9,27 +9,27 @@ const Legend = () => {
       <Row>
         <Col>
           <strong>Start Node </strong>
-          <Node isStart="true"></Node>
+          <Node isStart="true" isLegend="true"></Node>
         </Col>
         <Col>
           <strong>End Node </strong>
-          <Node isFinish="true"></Node>
+          <Node isFinish="true" isLegend="true"></Node>
         </Col>
         <Col>
           <strong>Unvisited Node </strong>
-          <Node></Node>
+          <Node isLegend="true"></Node>
         </Col>
         <Col>
           <strong>Visited Node </strong>
-          <Node isVisited="true"></Node>
+          <Node isVisited="true" isLegend="true"></Node>
         </Col>
         <Col>
           <strong>Wall Node </strong>
-          <Node isWall="true"></Node>
+          <Node isWall="true" isLegend="true"></Node>
         </Col>
         <Col>
           <strong>Weight Node </strong>
-          <Node is2xWall="true"></Node>
+          <Node is2xWall="true" isLegend="true"></Node>
         </Col>
       </Row>
     </Container>

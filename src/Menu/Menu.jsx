@@ -3,8 +3,6 @@ import {Dropdown, Button, Container, Row, Col} from 'react-bootstrap';
 import './Menu.css';
 import {algorithmSpeed} from '../PathfindingVisualizer/PathfindingVisualizer';
 import Legend from './Legend/Legend';
-import '../PathfindingVisualizer/Node/Node.css';
-import Node from '../PathfindingVisualizer/Node/Node';
 
 //descriptions for algorithm
 const AlgorithmDescription = {
