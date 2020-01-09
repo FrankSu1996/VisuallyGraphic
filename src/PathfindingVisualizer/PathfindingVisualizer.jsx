@@ -327,6 +327,7 @@ const createNode = (col, row) => {
     is2xWall: false,
     previousNode: null,
     animationDirection: null,
+    isLegend: false,
   };
 };
 

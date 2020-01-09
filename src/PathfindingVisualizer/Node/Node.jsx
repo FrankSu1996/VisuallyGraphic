@@ -33,9 +33,9 @@ export default class Node extends Component {
       <div
         id={`node-${row}-${col}`}
         className={`node ${extraClassName}`}
-        onMouseDown={this.props.isLegend ? () => onMouseDown(row, col) : null}
-        onMouseEnter={this.props.isLegend ? () => onMouseEnter(row, col) : null}
-        onMouseUp={this.props.isLegend ? () => onMouseUp() : null}
+        onMouseDown={isLegend ? null : () => onMouseDown(row, col)}
+        onMouseEnter={isLegend ? null : () => onMouseEnter(row, col)}
+        onMouseUp={isLegend ? null : () => onMouseUp()}
       ></div>
     );
   }
