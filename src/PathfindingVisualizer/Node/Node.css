@@ -1,4 +1,13 @@
-@media only screen and (max-width: 1300px) {
+.node {
+  width: 25px;
+  height: 25px;
+  outline: 1px solid rgb(175, 216, 248);
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+
+@media only screen and (max-width: 1350px) {
   .node {
     width: 20px;
     height: 20px;
@@ -9,18 +18,9 @@
   }
 }
 
-.node {
-  width: 25px;
-  height: 25px;
-  outline: 1px solid rgb(175, 216, 248);
-  display: inline-block;
-  margin: 0;
-  padding: 0;
-}
-
 .node-finish {
   /* border: 1px solid rgb(175, 216, 248); */
-  background-image: url('../../styling/circle.svg');
+  background-image: url("../../styling/circle.svg");
   /* background-color: rgb(255, 254, 106); */
   /* background-color: rgba(232, 147, 12, 0.75); */
   background-position: center;
@@ -37,7 +37,7 @@
 }
 
 .node-start {
-  background-image: url('../../styling/triangletwo-right.svg');
+  background-image: url("../../styling/triangletwo-right.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
@@ -89,7 +89,7 @@
 }
 
 .node-2x-wall {
-  background-image: url('../../styling/weight.svg');
+  background-image: url("../../styling/weight.svg");
   background-size: contain;
 }
 
@@ -105,22 +105,22 @@
 }
 
 .right {
-  background-image: url('../../styling//triangletwo-right.svg');
+  background-image: url("../../styling//triangletwo-right.svg");
   background-size: contain;
 }
 
 .left {
-  background-image: url('../../styling//triangletwo-left.svg');
+  background-image: url("../../styling//triangletwo-left.svg");
   background-size: contain;
 }
 
 .down {
-  background-image: url('../../styling//triangletwo-down.svg');
+  background-image: url("../../styling//triangletwo-down.svg");
   background-size: contain;
 }
 
 .up {
-  background-image: url('../../styling//triangletwo-up.svg');
+  background-image: url("../../styling//triangletwo-up.svg");
   background-size: contain;
 }
 
