@@ -1,5 +1,7 @@
 .grid {
-  margin: 50px 18vw;
+  position: absolute;
+  top: 30%;
+  left: 18%;
 }
 
 .row {
