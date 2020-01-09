@@ -15,7 +15,42 @@ export function recursiveDivision(grid) {
   return wallsGeneratedInOrder;
 }
 
-function divide(grid, x, y, columns, rows, orientation, stack) {}
+function divide(grid, x, y, columns, rows, orientation, stack) {
+  //base case: if width and height are 1
+  if (columns < 2 || rows < 2) {
+    return;
+  }
+
+  let horizontal = orientation === 'horizontal';
+
+  //where will walls be drawn from
+  let wallX = x + (horizontal ? 0 : Math.floor(Math.random(columns - 2)));
+  let wallY = y + (horizontal ? Math.floor(Math.random(rows - 2)) : 0);
+
+  //where the passage through the wall exist?
+  let passageX = wallX + (horizontal ? Math.floor(Math.random(columns)) : 0);
+  let passageY = wallY + (horizontal ? 0 : Math.floor(Math.random(rows)));
+
+  //what direction will the wall be drawn?
+  let directionX = horizontal ? 1 : 0;
+  let directionY = horizontal ? 0 : 1;
+
+  //how long will the wall be
+  let length = horizontal ? columns : rows;
+
+  for (let i = 0; i < length; i++) {
+    stack.push(grid[wallX][wallY]);
+    wallX += directionX;
+    wallY += directionY;
+  }
+
+  let nextX = x;
+  let nextY = y;
+  let nextColumns = horizontal ? columns : wallX - x + 1;
+  let nextRows = horizontal ? wallY - y + 1 : rows;
+
+  return stack;
+}
 
 function generateOuterWalls(grid, stack) {
   const columns = grid[0].length;
