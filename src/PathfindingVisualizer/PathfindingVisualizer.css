@@ -1,16 +1,33 @@
-.grid {
-  position: absolute;
-  margin: auto;
-  top: 100px;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 1250px;
-  height: 550px;
+@media only screen and (max-width: 1000px) {
+  .grid {
+    position: absolute;
+    margin: auto;
+    top: 100px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 1000px;
+    height: 550px;
+  }
+  .row {
+    height: 20px;
+  }
 }
 
-.row {
-  height: 26px;
+@media only screen and (max-width: 2000px) {
+  .grid {
+    position: absolute;
+    margin: auto;
+    top: 100px;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 1250px;
+    height: 550px;
+  }
+  .row {
+    height: 25px;
+  }
 }
 
 .visualizeBtn {
