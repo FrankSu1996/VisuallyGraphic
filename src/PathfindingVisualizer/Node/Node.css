@@ -1,23 +1,10 @@
-@media only screen and (max-width: 1000px) {
-  .node {
-    width: 20px;
-    height: 20px;
-    outline: 1px solid rgb(175, 216, 248);
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-  }
-}
-
-@media only screen and (max-width: 2000px) {
-  .node {
-    width: 25px;
-    height: 25px;
-    outline: 1px solid rgb(175, 216, 248);
-    display: inline-block;
-    margin: 0;
-    padding: 0;
-  }
+.node {
+  width: 22px;
+  height: 22px;
+  outline: 1px solid rgb(175, 216, 248);
+  display: inline-block;
+  margin: 0;
+  padding: 0;
 }
 
 .node-finish {
