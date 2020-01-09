@@ -30,7 +30,7 @@ export default class PathfindingVisualizer extends Component {
       finishNodeSelected: false,
       algorithmInProgress: false,
       algorithmSelected: 'djikstra',
-      isAlgorithmSelectedWeighted: null,
+      isAlgorithmSelectedWeighted: true,
       algorithmSpeed: algorithmSpeed.FAST,
       wallTypeSelected: 'normal',
     };
