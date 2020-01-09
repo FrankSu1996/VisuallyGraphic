@@ -13,9 +13,9 @@
   height: 25px;
 }
 
-@media only screen and (max-width: 1350px) {
+@media only screen and (max-width: 1450px) {
   .grid {
-    top: 450px;
+    top: 550px;
     width: 1000px;
     height: 550px;
   }
