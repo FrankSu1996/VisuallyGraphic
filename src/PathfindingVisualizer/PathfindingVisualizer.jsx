@@ -29,7 +29,7 @@ export default class PathfindingVisualizer extends Component {
       startNodeSelected: false,
       finishNodeSelected: false,
       algorithmInProgress: false,
-      algorithmSelected: null,
+      algorithmSelected: 'djikstra',
       isAlgorithmSelectedWeighted: null,
       algorithmSpeed: algorithmSpeed.FAST,
       wallTypeSelected: 'normal',
@@ -274,7 +274,7 @@ export default class PathfindingVisualizer extends Component {
         <div className="grid">
           {grid.map((row, rowIdx) => {
             return (
-              <div key={rowIdx}>
+              <div key={rowIdx} className="row">
                 {row.map((node, nodeIdx) => {
                   const {row, col, isFinish, isStart, isWall, is2xWall} = node;
                   return (

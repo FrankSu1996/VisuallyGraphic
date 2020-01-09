@@ -1,5 +1,9 @@
 .grid {
-  margin: 30px 0 0;
+  margin: 50px 18vw;
+}
+
+.row {
+  height: 26px;
 }
 
 .visualizeBtn {
