@@ -1,3 +1,8 @@
+let direction = {
+  SOUTH: 1,
+  EAST: 2,
+};
+
 export function recursiveDivision(grid) {
   const columns = grid[0].length;
   const rows = grid.length;
@@ -5,8 +10,8 @@ export function recursiveDivision(grid) {
   generateOuterWalls(grid, wallsGeneratedInOrder);
   divide(
     grid,
-    0,
-    0,
+    1,
+    1,
     columns,
     rows,
     chooseOrientation(columns, rows),
@@ -37,6 +42,9 @@ function divide(grid, x, y, columns, rows, orientation, stack) {
 
   //how long will the wall be
   let length = horizontal ? columns : rows;
+
+  //what direction is perpendicular to the wall?
+  let dir = horizontal ? direction.SOUTH : direction.EAST;
 
   for (let i = 0; i < length; i++) {
     stack.push(grid[wallX][wallY]);
