@@ -24,6 +24,17 @@
   }
 }
 
+@media only screen and (max-width: 1080) {
+  .grid {
+    top: 350px;
+    width: 900px;
+    height: 550px;
+  }
+  .row {
+    height: 18px;
+  }
+}
+
 .visualizeBtn {
   border: none;
   font-size: 15px;
