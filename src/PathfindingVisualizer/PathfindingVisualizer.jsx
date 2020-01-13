@@ -13,6 +13,8 @@ export let START_NODE_ROW = 10;
 export let START_NODE_COL = 15;
 export let FINISH_NODE_ROW = 10;
 export let FINISH_NODE_COL = 30;
+let NUM_ROWS = 10;
+let NUM_COLUMNS = 10;
 
 //enumeration to define algorithm animation (in ms)
 export const algorithmSpeed = {
@@ -205,8 +207,8 @@ export default class PathfindingVisualizer extends Component {
   resetGridHandler = () => {
     console.log ('fdsa');
     const newGrid = getInitialGrid ();
-    for (let row = 0; row < 20; row++) {
-      for (let col = 0; col < 50; col++) {
+    for (let row = 0; row < NUM_ROWS; row++) {
+      for (let col = 0; col < NUM_COLUMNS; col++) {
         if (row === START_NODE_ROW && col === START_NODE_COL) {
           document.getElementById (`node-${row}-${col}`).className =
             'node node-start';
@@ -311,9 +313,9 @@ export default class PathfindingVisualizer extends Component {
 
 const getInitialGrid = () => {
   const grid = [];
-  for (let row = 0; row < 20; row++) {
+  for (let row = 0; row < NUM_ROWS; row++) {
     const currentRow = [];
-    for (let col = 0; col < 50; col++) {
+    for (let col = 0; col < NUM_COLUMNS; col++) {
       currentRow.push (createNode (col, row));
     }
     grid.push (currentRow);
