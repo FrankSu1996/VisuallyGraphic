@@ -10,8 +10,6 @@ When the application loads, click and drag the arrow/bullseye to set the startin
 
 **Note**: In order to select weighted walls, you must select a weighted algorithm (Djikstra). 
 
-Known bugs: There is currently a small bug regarding wall placements and start/finish node placements. Sometimes, even when the left-mouse click is released, the onMouseUp() event listener is not firing properly. If this happens, simply click once anywhere. To avoid this, simply perform drag-and-drop operations slowly. Not sure why this is happening :(
-
-## Improvements:
-As this application is currently an active side project, the following are features to be implemented for the future:
-* Maze Generating algorithms: Currently working on Recursive Division Algorithm
+Known bugs: 
+  1. There is currently a small bug regarding wall placements and start/finish node placements. Sometimes, even when the left-mouse click is released, the onMouseUp() event listener is not firing properly. If this happens, simply click once anywhere. To avoid this, simply perform drag-and-drop operations slowly. Not sure why this is happening :(
+  2. Although The Recursive Division Maze algorithm looks like it's working, the implementation is not quite 100% correct, as there are some unreachable parts sometimes. Will try and fix in the future!
