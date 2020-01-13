@@ -13,8 +13,8 @@ export let START_NODE_ROW = 10;
 export let START_NODE_COL = 15;
 export let FINISH_NODE_ROW = 10;
 export let FINISH_NODE_COL = 30;
-let NUM_ROWS = 10;
-let NUM_COLUMNS = 10;
+let NUM_ROWS = 20;
+let NUM_COLUMNS = 50;
 
 //enumeration to define algorithm animation (in ms)
 export const algorithmSpeed = {
@@ -336,6 +336,7 @@ const createNode = (col, row) => {
     previousNode: null,
     animationDirection: null,
     isLegend: false,
+    isDoor: false,
   };
 };
 

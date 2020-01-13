@@ -22,13 +22,12 @@ export function recursiveDivision (grid) {
     columns - 2,
     rows - 2,
     chooseOrientation (columns, rows),
-    wallsGeneratedInOrder,
-    {x: 1, y: 1}
+    wallsGeneratedInOrder
   );
   return wallsGeneratedInOrder;
 }
 
-function divide (grid, x, y, columns, rows, orientation, stack, previousDoor) {
+function divide (grid, x, y, columns, rows, orientation, stack) {
   console.log ('height: ' + rows + ' width: ' + columns);
   //base case: if width and height are 1
   if (columns < 3 || rows < 3) {
@@ -39,14 +38,14 @@ function divide (grid, x, y, columns, rows, orientation, stack, previousDoor) {
   const horizontal = orientation === 'horizontal';
 
   //where will walls be drawn from
-  let wallX = getNewWallX (orientation, columns, x, previousDoor);
-  let wallY = getNewWallY (orientation, rows, y, previousDoor);
+  let wallX = getNewWallX (orientation, columns, x);
+  let wallY = getNewWallY (orientation, rows, y);
   console.log ('wallX: ' + wallX + ' wallY: ' + wallY);
 
   //where will the door be?
   let doorX = wallX + (horizontal ? getRandomInt (columns) : 0);
   let doorY = wallY + (horizontal ? 0 : getRandomInt (rows));
-  const door = {x: doorX, y: doorY};
+
   console.log ('doorX: ' + doorX + ' doorY: ' + doorY);
 
   //what direction will the wall be drawn?
@@ -61,14 +60,24 @@ function divide (grid, x, y, columns, rows, orientation, stack, previousDoor) {
 
   //push new wall onto stack, unless it is the door node
   for (let i = 0; i < length; i++) {
-    if (wallY !== doorY && dir === direction.EAST) {
+    if (
+      wallY !== doorY &&
+      dir === direction.EAST &&
+      !grid[wallY + 1][wallX].isDoor
+    ) {
       stack.push (grid[wallY][wallX]);
-    } else if (dir === direction.SOUTH && wallX !== doorX) {
+    } else if (
+      dir === direction.SOUTH &&
+      wallX !== doorX &&
+      !grid[wallY][wallX + 1].isDoor
+    ) {
       stack.push (grid[wallY][wallX]);
     }
     wallX += dx;
     wallY += dy;
   }
+
+  grid[doorY][doorX].isDoor = true;
 
   //recursive call for one half of the grid from divide and conquer
   let nextX = x, nextY = y;
@@ -83,8 +92,7 @@ function divide (grid, x, y, columns, rows, orientation, stack, previousDoor) {
     nextColumns,
     nextRows,
     chooseOrientation (nextColumns, nextRows),
-    stack,
-    door
+    stack
   );
 
   //recursive call for other half of the grid from divide and conquer
@@ -101,8 +109,7 @@ function divide (grid, x, y, columns, rows, orientation, stack, previousDoor) {
     nextColumns,
     nextRows,
     chooseOrientation (nextColumns, nextRows),
-    stack,
-    door
+    stack
   );
   console.log ('End of function call');
   return stack;
@@ -114,10 +121,6 @@ function getNewWallX (orientation, columns, x) {
   let newX = x;
   if (orientation !== 'horizontal') {
     newX += getRandomInt (columns - 3) + 1;
-    while (newX === START_NODE_COL || newX === FINISH_NODE_COL) {
-      newX = x;
-      newX += getRandomInt (columns - 3) + 1;
-    }
   }
 
   return newX;
@@ -129,10 +132,6 @@ function getNewWallY (orientation, rows, y) {
   let newY = y;
   if (orientation !== 'vertical') {
     newY += getRandomInt (rows - 3) + 1;
-    while (newY === START_NODE_ROW || newY === FINISH_NODE_ROW) {
-      newY = y;
-      newY += getRandomInt (rows - 3) + 1;
-    }
   }
 
   return newY;
