@@ -10,6 +10,9 @@ let direction = {
   EAST: 2,
 };
 
+let doorX = null;
+let doorY = null;
+
 export function recursiveDivision (grid) {
   const columns = grid[0].length;
   const rows = grid.length;
@@ -19,8 +22,8 @@ export function recursiveDivision (grid) {
     grid,
     1,
     1,
-    columns - 1,
-    rows - 1,
+    columns - 2,
+    rows - 2,
     chooseOrientation (columns, rows),
     wallsGeneratedInOrder
   );
@@ -42,8 +45,8 @@ function divide (grid, x, y, columns, rows, orientation, stack) {
   console.log ('wallX: ' + wallX + ' wallY: ' + wallY);
 
   //where will the door be?
-  let doorX = wallX + (horizontal ? getRandomInt (columns) : 0);
-  let doorY = wallY + (horizontal ? 0 : getRandomInt (rows));
+  doorX = wallX + (horizontal ? getRandomInt (columns) : 0);
+  doorY = wallY + (horizontal ? 0 : getRandomInt (rows));
   console.log ('doorX: ' + doorX + ' doorY: ' + doorY);
 
   //what direction will the wall be drawn?
@@ -56,6 +59,7 @@ function divide (grid, x, y, columns, rows, orientation, stack) {
   //what direction is perpendicular to the wall?
   const dir = horizontal ? direction.SOUTH : direction.EAST;
 
+  //push new wall onto stack, unless it is the door node
   for (let i = 0; i < length; i++) {
     if (wallY !== doorY && dir === direction.EAST) {
       stack.push (grid[wallY][wallX]);
@@ -65,6 +69,29 @@ function divide (grid, x, y, columns, rows, orientation, stack) {
     wallX += dx;
     wallY += dy;
   }
+
+  //recursive call for one half of the grid from divide and conquer
+  let nextX = x, nextY = y;
+  let nextColumns = horizontal ? columns : wallX - x;
+  let nextRows = horizontal ? wallY - y : rows;
+  console.log ('recurse left');
+  divide (
+    grid,
+    nextX,
+    nextY,
+    nextColumns,
+    nextRows,
+    chooseOrientation (nextColumns, nextRows),
+    stack
+  );
+
+  //recursive call for other half of the grid from divide and conquer
+  nextX = horizontal ? x : wallX + 1;
+  nextY = horizontal ? wallY + 1 : y;
+  nextColumns = horizontal ? columns : x + columns - wallX - 1;
+  nextRows = horizontal ? y + rows - wallY - 1 : rows;
+  console.log (nextX, nextY, nextColumns, nextRows);
+  console.log ('recurse right');
 
   return stack;
 }
